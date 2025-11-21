@@ -1,10 +1,11 @@
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { useNavigate } from "react-router-dom";
-import { Heart } from "lucide-react";
+import { Heart, ExternalLink } from "lucide-react";
 
 const ThankYou = () => {
   const navigate = useNavigate();
+  const googleReviewUrl = "https://search.google.com/local/writereview?placeid=ChIJI0GQVwnSKogR-AjLY2ZDAcE";
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-secondary/30 to-background flex items-center justify-center p-4">
@@ -31,11 +32,19 @@ const ThankYou = () => {
               Would you like to share your experience publicly?
             </p>
             <Button
-              onClick={() => navigate('/google-review')}
+              asChild
               className="w-full bg-accent hover:bg-accent/90 text-accent-foreground shadow-md"
               size="lg"
             >
-              Leave a Google Review
+              <a 
+                href={googleReviewUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center justify-center gap-2"
+              >
+                Leave a Google Review
+                <ExternalLink className="w-4 h-4" />
+              </a>
             </Button>
             <Button
               variant="ghost"
