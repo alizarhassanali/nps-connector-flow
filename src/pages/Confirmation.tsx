@@ -1,0 +1,47 @@
+import { Button } from "@/components/ui/button";
+import { Card } from "@/components/ui/card";
+import { useNavigate } from "react-router-dom";
+import { CheckCircle2 } from "lucide-react";
+
+const Confirmation = () => {
+  const navigate = useNavigate();
+
+  return (
+    <div className="min-h-screen bg-gradient-to-br from-secondary/30 to-background flex items-center justify-center p-4">
+      <div className="w-full max-w-md animate-fade-in">
+        <Card className="p-8 shadow-lg text-center space-y-6">
+          {/* Success Icon */}
+          <div className="w-20 h-20 mx-auto bg-primary/10 rounded-full flex items-center justify-center">
+            <CheckCircle2 className="w-10 h-10 text-primary" />
+          </div>
+
+          {/* Message */}
+          <div className="space-y-2">
+            <h1 className="text-3xl font-bold text-foreground">
+              Thank You
+            </h1>
+            <p className="text-muted-foreground">
+              We've received your feedback and our team will review it carefully.
+            </p>
+            <p className="text-sm text-muted-foreground">
+              We're committed to making improvements and hope to serve you better in the future.
+            </p>
+          </div>
+
+          {/* Return Home */}
+          <div className="pt-4">
+            <Button
+              onClick={() => navigate('/')}
+              className="w-full bg-primary hover:bg-primary/90 text-primary-foreground"
+              size="lg"
+            >
+              Return to Home
+            </Button>
+          </div>
+        </Card>
+      </div>
+    </div>
+  );
+};
+
+export default Confirmation;
