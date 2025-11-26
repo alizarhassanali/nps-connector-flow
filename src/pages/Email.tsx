@@ -34,20 +34,33 @@ const Email = () => {
                 Thanks for your recent visit. We hope you had a positive experience with us.
               </p>
 
-              <p className="text-foreground leading-relaxed">
-                Please take a moment to rate your experience. Your feedback helps us improve our service.
+              <p className="text-foreground leading-relaxed font-medium">
+                How likely are you to recommend us to a friend or family member?
               </p>
 
-              <Button 
-                onClick={() => navigate('/survey')}
-                className="w-full bg-primary hover:bg-primary/90 text-primary-foreground shadow-md"
-                size="lg"
-              >
-                Take Survey
-              </Button>
+              {/* NPS Scale */}
+              <div className="space-y-3">
+                <div className="grid grid-cols-11 gap-1.5">
+                  {[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10].map((score) => (
+                    <button
+                      key={score}
+                      onClick={() => navigate(`/survey?score=${score}`)}
+                      className="aspect-square rounded-lg font-semibold text-sm bg-secondary hover:bg-primary hover:text-primary-foreground transition-all duration-200 hover:scale-105"
+                    >
+                      {score}
+                    </button>
+                  ))}
+                </div>
+                
+                {/* Labels */}
+                <div className="flex justify-between text-xs text-muted-foreground px-1">
+                  <span>Not likely</span>
+                  <span>Very likely</span>
+                </div>
+              </div>
 
-              <p className="text-sm text-muted-foreground">
-                This survey takes less than 2 minutes to complete.
+              <p className="text-xs text-muted-foreground text-center">
+                Click a number to rate your experience
               </p>
             </div>
           </div>

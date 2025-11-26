@@ -1,11 +1,15 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useSearchParams } from "react-router-dom";
 import { Frown, Meh, Smile } from "lucide-react";
 
 const Survey = () => {
-  const [selectedScore, setSelectedScore] = useState<number | null>(null);
+  const [searchParams] = useSearchParams();
+  const preSelectedScore = searchParams.get('score');
+  const [selectedScore, setSelectedScore] = useState<number | null>(
+    preSelectedScore ? parseInt(preSelectedScore) : null
+  );
   const navigate = useNavigate();
 
   const handleSubmit = () => {
@@ -13,13 +17,21 @@ const Survey = () => {
     
     if (selectedScore >= 9) {
       navigate('/thank-you');
-    } else if (selectedScore <= 6) {
-      navigate('/feedback');
     } else {
-      // Passive scores (7-8) - just thank them
-      navigate('/thank-you-passive');
+      // Scores 0-8 - ask for feedback
+      navigate('/feedback');
     }
   };
+
+  // Auto-submit if score was pre-selected from email
+  useEffect(() => {
+    if (preSelectedScore !== null && selectedScore !== null) {
+      const timer = setTimeout(() => {
+        handleSubmit();
+      }, 800);
+      return () => clearTimeout(timer);
+    }
+  }, [preSelectedScore]);
 
   const getEmoji = (score: number) => {
     if (score <= 6) return <Frown className="w-5 h-5 text-destructive" />;
@@ -78,8 +90,7 @@ const Survey = () => {
                   {getEmoji(selectedScore)}
                 </div>
                 <p className="text-sm text-muted-foreground">
-                  {selectedScore <= 6 && "We'd like to hear what went wrong"}
-                  {selectedScore >= 7 && selectedScore <= 8 && "Thanks for your rating!"}
+                  {selectedScore <= 8 && "We'd like to hear what went wrong"}
                   {selectedScore >= 9 && "Great! Would you share your experience?"}
                 </p>
               </div>
