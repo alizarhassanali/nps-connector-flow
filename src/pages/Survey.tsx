@@ -23,15 +23,6 @@ const Survey = () => {
     }
   };
 
-  // Auto-submit if score was pre-selected from email
-  useEffect(() => {
-    if (preSelectedScore !== null && selectedScore !== null) {
-      const timer = setTimeout(() => {
-        handleSubmit();
-      }, 800);
-      return () => clearTimeout(timer);
-    }
-  }, [preSelectedScore]);
 
   const getEmoji = (score: number) => {
     if (score <= 6) return <Frown className="w-5 h-5 text-destructive" />;

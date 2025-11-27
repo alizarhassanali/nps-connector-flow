@@ -2,11 +2,14 @@ import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { Textarea } from "@/components/ui/textarea";
+import { Checkbox } from "@/components/ui/checkbox";
+import { Label } from "@/components/ui/label";
 import { useNavigate } from "react-router-dom";
 import { MessageSquare } from "lucide-react";
 
 const Feedback = () => {
   const [feedback, setFeedback] = useState("");
+  const [allowContact, setAllowContact] = useState(false);
   const navigate = useNavigate();
 
   const handleSubmit = () => {
@@ -44,6 +47,27 @@ const Feedback = () => {
                 onChange={(e) => setFeedback(e.target.value)}
                 className="min-h-[150px] resize-none"
               />
+            </div>
+
+            {/* Contact Consent */}
+            <div className="flex items-start space-x-3 p-4 bg-secondary/30 rounded-lg">
+              <Checkbox 
+                id="contact-consent" 
+                checked={allowContact}
+                onCheckedChange={(checked) => setAllowContact(checked as boolean)}
+                className="mt-1"
+              />
+              <div className="flex-1">
+                <Label 
+                  htmlFor="contact-consent" 
+                  className="text-sm font-medium cursor-pointer leading-tight"
+                >
+                  I consent to being contacted by the clinic via email or phone regarding my feedback
+                </Label>
+                <p className="text-xs text-muted-foreground mt-1">
+                  This helps us better understand and address your concerns
+                </p>
+              </div>
             </div>
 
             <Button
