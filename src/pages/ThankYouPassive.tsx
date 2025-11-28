@@ -8,10 +8,10 @@ const ThankYouPassive = () => {
   const navigate = useNavigate();
 
   return (
-    <div className="min-h-screen flex items-center justify-center p-4">
+    <div className="min-h-screen flex flex-col items-center justify-center p-4">
+      <ClinicLogo />
       <div className="w-full max-w-md animate-fade-in">
         <Card className="p-8 shadow-lg text-center space-y-6 bg-card/95 backdrop-blur">
-          <ClinicLogo />
           
           {/* Success Icon */}
           <div className="w-20 h-20 mx-auto bg-primary/10 rounded-full flex items-center justify-center">

@@ -7,13 +7,14 @@ const Email = () => {
   const navigate = useNavigate();
 
   return (
-    <div className="min-h-screen flex items-center justify-center p-4">
-      <div className="w-full max-w-md animate-fade-in">
+    <div className="min-h-screen flex flex-col items-center justify-center p-4">
+      <ClinicLogo />
+      <div className="w-full max-w-lg animate-fade-in">
         {/* Email Container */}
-        <Card className="shadow-lg overflow-hidden bg-card/95 backdrop-blur">
+        <Card className="shadow-xl overflow-hidden bg-card/95 backdrop-blur">
           {/* Email Header */}
-          <div className="bg-primary p-4 text-center">
-            <ClinicLogo />
+          <div className="bg-primary p-6 text-center">
+            <h2 className="text-xl font-bold text-primary-foreground">We Value Your Feedback</h2>
           </div>
 
           {/* Email Body */}
@@ -41,7 +42,7 @@ const Email = () => {
                     <button
                       key={score}
                       onClick={() => navigate(`/survey?score=${score}`)}
-                      className="aspect-square rounded-lg font-semibold text-sm bg-secondary hover:bg-primary hover:text-primary-foreground transition-all duration-200 hover:scale-105"
+                      className="aspect-square rounded-lg font-semibold text-sm bg-card hover:bg-primary hover:text-primary-foreground transition-all duration-200 hover:scale-105 border-2 border-border"
                     >
                       {score}
                     </button>
@@ -62,13 +63,24 @@ const Email = () => {
           </div>
 
           {/* Email Footer */}
-          <div className="bg-muted p-4 text-center border-t">
-            <p className="text-xs text-muted-foreground">
-              HealthCare Clinic | 123 Medical Way
-            </p>
-            <button className="text-xs text-muted-foreground underline hover:text-foreground mt-2">
-              Unsubscribe
-            </button>
+          <div className="bg-muted p-6 text-center space-y-3">
+            <div className="space-y-1">
+              <p className="text-sm font-medium text-foreground">Generation Fertility</p>
+              <p className="text-xs text-muted-foreground">
+                9401 Jane St #200, Vaughan, ON L6A 4H7
+              </p>
+              <p className="text-xs text-muted-foreground">
+                Phone: (905) 597-4483
+              </p>
+            </div>
+            <div className="pt-2 border-t border-border space-y-1">
+              <p className="text-xs text-muted-foreground">
+                © 2024 Generation Fertility. All rights reserved.
+              </p>
+              <button className="text-xs text-muted-foreground underline hover:text-foreground">
+                Unsubscribe
+              </button>
+            </div>
           </div>
         </Card>
 
