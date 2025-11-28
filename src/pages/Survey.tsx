@@ -32,10 +32,10 @@ const Survey = () => {
   };
 
   return (
-    <div className="min-h-screen flex items-center justify-center p-4">
+    <div className="min-h-screen flex flex-col items-center justify-center p-4">
+      <ClinicLogo />
       <div className="w-full max-w-2xl animate-fade-in">
         <Card className="p-6 md:p-8 shadow-lg bg-card/95 backdrop-blur">
-          <ClinicLogo />
           
           {/* Header */}
           <div className="text-center mb-8 space-y-2">
@@ -59,7 +59,7 @@ const Survey = () => {
                     transition-all duration-200
                     ${selectedScore === score 
                       ? 'bg-primary text-primary-foreground shadow-lg scale-110' 
-                      : 'bg-secondary hover:bg-secondary/80 text-foreground hover:scale-105'
+                      : 'bg-card hover:bg-muted text-foreground hover:scale-105 border-2 border-border'
                     }
                   `}
                 >

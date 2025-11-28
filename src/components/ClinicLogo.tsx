@@ -1,12 +1,12 @@
-import clinicLogo from "@/assets/clinic-logo.png";
+import clinicLogo from "@/assets/clinic-logo.svg";
 
 const ClinicLogo = () => {
   return (
-    <div className="flex justify-center mb-6">
+    <div className="flex justify-center mb-8">
       <img 
         src={clinicLogo} 
         alt="Generation Fertility Clinic" 
-        className="h-20 w-auto drop-shadow-md"
+        className="h-16 w-auto"
       />
     </div>
   );

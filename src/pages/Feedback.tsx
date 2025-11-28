@@ -31,10 +31,10 @@ const Feedback = () => {
   };
 
   return (
-    <div className="min-h-screen flex items-center justify-center p-4">
+    <div className="min-h-screen flex flex-col items-center justify-center p-4">
+      <ClinicLogo />
       <div className="w-full max-w-md animate-fade-in">
         <Card className="p-6 md:p-8 shadow-lg space-y-6 bg-card/95 backdrop-blur">
-          <ClinicLogo />
           
           {/* Header */}
           <div className="text-center space-y-3">
@@ -65,7 +65,7 @@ const Feedback = () => {
             </div>
 
             {/* Contact Consent */}
-            <div className="flex items-start space-x-3 p-4 bg-secondary/30 rounded-lg">
+            <div className="flex items-start space-x-3 p-4 bg-muted rounded-lg border border-border">
               <Checkbox 
                 id="contact-consent" 
                 checked={allowContact}

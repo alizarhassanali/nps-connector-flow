@@ -6,17 +6,17 @@ const SMS = () => {
   const navigate = useNavigate();
 
   return (
-    <div className="min-h-screen flex items-center justify-center p-4">
+    <div className="min-h-screen flex flex-col items-center justify-center p-4">
+      <ClinicLogo />
       <div className="w-full max-w-md animate-fade-in">
         {/* SMS Message Bubble */}
         <div className="bg-card/95 backdrop-blur rounded-3xl shadow-lg p-6 space-y-4">
-          <ClinicLogo />
           <div className="flex items-start space-x-3">
             <div className="w-10 h-10 rounded-full bg-primary flex items-center justify-center flex-shrink-0">
               <span className="text-primary-foreground font-semibold text-sm">HC</span>
             </div>
             <div className="flex-1 space-y-3">
-              <div className="bg-secondary rounded-2xl rounded-tl-sm p-4">
+              <div className="bg-muted rounded-2xl rounded-tl-sm p-4 border border-border">
                 <p className="text-sm leading-relaxed text-foreground">
                   Thanks for visiting us today. We'd love your feedback.
                 </p>
