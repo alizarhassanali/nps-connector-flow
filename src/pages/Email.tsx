@@ -1,23 +1,19 @@
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { useNavigate } from "react-router-dom";
+import ClinicLogo from "@/components/ClinicLogo";
 
 const Email = () => {
   const navigate = useNavigate();
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-secondary/30 to-background flex items-center justify-center p-4">
+    <div className="min-h-screen flex items-center justify-center p-4">
       <div className="w-full max-w-md animate-fade-in">
         {/* Email Container */}
-        <Card className="shadow-lg overflow-hidden">
+        <Card className="shadow-lg overflow-hidden bg-card/95 backdrop-blur">
           {/* Email Header */}
           <div className="bg-primary p-4 text-center">
-            <div className="w-16 h-16 mx-auto bg-primary-foreground rounded-2xl flex items-center justify-center shadow-md mb-3">
-              <div className="text-2xl font-bold text-primary">HC</div>
-            </div>
-            <h2 className="text-xl font-semibold text-primary-foreground">
-              HealthCare Clinic
-            </h2>
+            <ClinicLogo />
           </div>
 
           {/* Email Body */}

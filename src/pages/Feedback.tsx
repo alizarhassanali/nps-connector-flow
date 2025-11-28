@@ -4,13 +4,26 @@ import { Card } from "@/components/ui/card";
 import { Textarea } from "@/components/ui/textarea";
 import { Checkbox } from "@/components/ui/checkbox";
 import { Label } from "@/components/ui/label";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useSearchParams } from "react-router-dom";
 import { MessageSquare } from "lucide-react";
+import ClinicLogo from "@/components/ClinicLogo";
 
 const Feedback = () => {
+  const [searchParams] = useSearchParams();
+  const score = searchParams.get('score') ? parseInt(searchParams.get('score')!) : null;
   const [feedback, setFeedback] = useState("");
   const [allowContact, setAllowContact] = useState(false);
   const navigate = useNavigate();
+
+  const getFeedbackMessage = () => {
+    if (score !== null && score <= 6) {
+      return "Thank you for your honesty. We are sorry to hear that your experience did not meet expectations. Please tell us what happened so we can follow up and make things better.";
+    } else if (score !== null && score <= 8) {
+      return "Thank you for your feedback. We'd love to know what would have made your experience even better.";
+    } else {
+      return "Thank you for your feedback! We're happy you had a positive experience. Is there anything that stood out that you'd like to share?";
+    }
+  };
 
   const handleSubmit = () => {
     // In a real app, this would submit to a backend
@@ -18,19 +31,21 @@ const Feedback = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-secondary/30 to-background flex items-center justify-center p-4">
+    <div className="min-h-screen flex items-center justify-center p-4">
       <div className="w-full max-w-md animate-fade-in">
-        <Card className="p-6 md:p-8 shadow-lg space-y-6">
+        <Card className="p-6 md:p-8 shadow-lg space-y-6 bg-card/95 backdrop-blur">
+          <ClinicLogo />
+          
           {/* Header */}
           <div className="text-center space-y-3">
             <div className="w-16 h-16 mx-auto bg-muted rounded-2xl flex items-center justify-center">
               <MessageSquare className="w-8 h-8 text-muted-foreground" />
             </div>
             <h1 className="text-2xl font-bold text-foreground">
-              We're Sorry
+              We Value Your Feedback
             </h1>
             <p className="text-muted-foreground">
-              Your experience wasn't what we hoped for. Please help us understand what happened so we can improve.
+              {getFeedbackMessage()}
             </p>
           </div>
 

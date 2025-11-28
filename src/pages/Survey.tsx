@@ -1,8 +1,9 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { useNavigate, useSearchParams } from "react-router-dom";
 import { Frown, Meh, Smile } from "lucide-react";
+import ClinicLogo from "@/components/ClinicLogo";
 
 const Survey = () => {
   const [searchParams] = useSearchParams();
@@ -18,8 +19,8 @@ const Survey = () => {
     if (selectedScore >= 9) {
       navigate('/thank-you');
     } else {
-      // Scores 0-8 - ask for feedback
-      navigate('/feedback');
+      // Scores 0-8 - ask for feedback with score
+      navigate(`/feedback?score=${selectedScore}`);
     }
   };
 
@@ -31,14 +32,13 @@ const Survey = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-secondary/30 to-background flex items-center justify-center p-4">
+    <div className="min-h-screen flex items-center justify-center p-4">
       <div className="w-full max-w-2xl animate-fade-in">
-        <Card className="p-6 md:p-8 shadow-lg">
+        <Card className="p-6 md:p-8 shadow-lg bg-card/95 backdrop-blur">
+          <ClinicLogo />
+          
           {/* Header */}
           <div className="text-center mb-8 space-y-2">
-            <div className="w-16 h-16 mx-auto bg-primary rounded-2xl flex items-center justify-center shadow-md mb-4">
-              <div className="text-2xl font-bold text-primary-foreground">HC</div>
-            </div>
             <h1 className="text-2xl md:text-3xl font-bold text-foreground">
               We Value Your Feedback
             </h1>
