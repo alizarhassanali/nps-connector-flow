@@ -2,14 +2,17 @@ import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { useNavigate } from "react-router-dom";
 import { CheckCircle } from "lucide-react";
+import ClinicLogo from "@/components/ClinicLogo";
 
 const ThankYouPassive = () => {
   const navigate = useNavigate();
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-secondary/30 to-background flex items-center justify-center p-4">
+    <div className="min-h-screen flex items-center justify-center p-4">
       <div className="w-full max-w-md animate-fade-in">
-        <Card className="p-8 shadow-lg text-center space-y-6">
+        <Card className="p-8 shadow-lg text-center space-y-6 bg-card/95 backdrop-blur">
+          <ClinicLogo />
+          
           {/* Success Icon */}
           <div className="w-20 h-20 mx-auto bg-primary/10 rounded-full flex items-center justify-center">
             <CheckCircle className="w-10 h-10 text-primary" />

@@ -1,14 +1,16 @@
 import { Button } from "@/components/ui/button";
 import { useNavigate } from "react-router-dom";
+import ClinicLogo from "@/components/ClinicLogo";
 
 const SMS = () => {
   const navigate = useNavigate();
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-secondary/30 to-background flex items-center justify-center p-4">
+    <div className="min-h-screen flex items-center justify-center p-4">
       <div className="w-full max-w-md animate-fade-in">
         {/* SMS Message Bubble */}
-        <div className="bg-card rounded-3xl shadow-lg p-6 space-y-4">
+        <div className="bg-card/95 backdrop-blur rounded-3xl shadow-lg p-6 space-y-4">
+          <ClinicLogo />
           <div className="flex items-start space-x-3">
             <div className="w-10 h-10 rounded-full bg-primary flex items-center justify-center flex-shrink-0">
               <span className="text-primary-foreground font-semibold text-sm">HC</span>

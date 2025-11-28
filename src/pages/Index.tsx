@@ -2,18 +2,17 @@ import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { Mail, MessageSquare } from "lucide-react";
 import { useNavigate } from "react-router-dom";
+import ClinicLogo from "@/components/ClinicLogo";
 
 const Index = () => {
   const navigate = useNavigate();
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-secondary/30 to-background flex items-center justify-center p-4">
+    <div className="min-h-screen flex items-center justify-center p-4">
       <div className="w-full max-w-md space-y-8 animate-fade-in">
         {/* Header */}
         <div className="text-center space-y-2">
-          <div className="w-16 h-16 mx-auto bg-primary rounded-2xl flex items-center justify-center shadow-lg">
-            <div className="text-2xl font-bold text-primary-foreground">HC</div>
-          </div>
+          <ClinicLogo />
           <h1 className="text-3xl font-bold text-foreground">Patient Feedback</h1>
           <p className="text-muted-foreground">Choose how you received your survey</p>
         </div>

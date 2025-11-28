@@ -9,24 +9,24 @@ All colors MUST be HSL.
 @layer base {
   :root {
     --background: 0 0% 100%;
-    --foreground: 215 25% 27%;
+    --foreground: 212 51% 29%;
 
     --card: 0 0% 100%;
-    --card-foreground: 215 25% 27%;
+    --card-foreground: 212 51% 29%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 215 25% 27%;
+    --popover-foreground: 212 51% 29%;
 
-    --primary: 186 100% 29%;
+    --primary: 7 100% 74%;
     --primary-foreground: 0 0% 100%;
 
-    --secondary: 186 44% 96%;
-    --secondary-foreground: 186 100% 29%;
+    --secondary: 212 51% 29%;
+    --secondary-foreground: 0 0% 100%;
 
     --muted: 210 40% 96.1%;
     --muted-foreground: 215 16% 47%;
 
-    --accent: 186 100% 42%;
+    --accent: 7 100% 74%;
     --accent-foreground: 0 0% 100%;
 
     --destructive: 0 84% 60%;
@@ -34,14 +34,14 @@ All colors MUST be HSL.
 
     --border: 214 32% 91%;
     --input: 214 32% 91%;
-    --ring: 186 100% 29%;
+    --ring: 7 100% 74%;
 
     --radius: 1rem;
     
     /* Custom tokens for NPS prototype */
-    --medical-gradient: linear-gradient(135deg, hsl(186 100% 29%), hsl(186 100% 42%));
-    --shadow-soft: 0 4px 24px -4px hsl(186 100% 29% / 0.12);
-    --shadow-medium: 0 8px 32px -8px hsl(186 100% 29% / 0.2);
+    --medical-gradient: linear-gradient(135deg, hsl(7 100% 74%), hsl(212 51% 29%));
+    --shadow-soft: 0 4px 24px -4px hsl(7 100% 74% / 0.12);
+    --shadow-medium: 0 8px 32px -8px hsl(7 100% 74% / 0.2);
     --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 
     --sidebar-background: 0 0% 98%;
@@ -62,25 +62,25 @@ All colors MUST be HSL.
   }
 
   .dark {
-    --background: 215 28% 17%;
+    --background: 212 51% 15%;
     --foreground: 0 0% 98%;
 
-    --card: 215 28% 17%;
+    --card: 212 51% 20%;
     --card-foreground: 0 0% 98%;
 
-    --popover: 215 28% 17%;
+    --popover: 212 51% 20%;
     --popover-foreground: 0 0% 98%;
 
-    --primary: 186 100% 42%;
+    --primary: 7 100% 74%;
     --primary-foreground: 0 0% 100%;
 
-    --secondary: 215 25% 27%;
+    --secondary: 212 51% 29%;
     --secondary-foreground: 0 0% 98%;
 
     --muted: 215 25% 27%;
     --muted-foreground: 215 20% 65%;
 
-    --accent: 186 100% 42%;
+    --accent: 7 100% 74%;
     --accent-foreground: 0 0% 100%;
 
     --destructive: 0 63% 31%;
@@ -88,7 +88,7 @@ All colors MUST be HSL.
 
     --border: 215 25% 27%;
     --input: 215 25% 27%;
-    --ring: 186 100% 42%;
+    --ring: 7 100% 74%;
     --sidebar-background: 240 5.9% 10%;
     --sidebar-foreground: 240 4.8% 95.9%;
     --sidebar-primary: 224.3 76.3% 48%;
@@ -107,5 +107,10 @@ All colors MUST be HSL.
 
   body {
     @apply bg-background text-foreground;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    background-image: url('/background.png');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
   }
 }
