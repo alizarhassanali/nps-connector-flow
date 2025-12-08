@@ -31,16 +31,6 @@ const ThankYouPassive = () => {
             </p>
           </div>
 
-          {/* Return Home */}
-          <div className="pt-4">
-            <Button
-              onClick={() => navigate('/')}
-              className="w-full bg-primary hover:bg-primary/90 text-primary-foreground"
-              size="lg"
-            >
-              Return to Home
-            </Button>
-          </div>
         </Card>
       </div>
     </div>
