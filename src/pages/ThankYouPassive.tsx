@@ -1,11 +1,11 @@
-import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
-import { useNavigate } from "react-router-dom";
 import { CheckCircle } from "lucide-react";
 import ClinicLogo from "@/components/ClinicLogo";
+import LanguageSwitcher from "@/components/LanguageSwitcher";
+import { useTranslation } from "@/lib/i18n";
 
 const ThankYouPassive = () => {
-  const navigate = useNavigate();
+  const { t } = useTranslation();
 
   return (
     <div className="min-h-screen flex flex-col items-center justify-center p-4">
@@ -21,17 +21,19 @@ const ThankYouPassive = () => {
           {/* Thank You Message */}
           <div className="space-y-2">
             <h1 className="text-3xl font-bold text-foreground">
-              Thank You!
+              {t('thankYou')}
             </h1>
             <p className="text-muted-foreground">
-              We appreciate you taking the time to share your feedback.
+              {t('appreciateFeedback')}
             </p>
             <p className="text-sm text-muted-foreground">
-              Your response helps us continue to improve our service.
+              {t('helpsContinueImprove')}
             </p>
           </div>
 
         </Card>
+
+        <LanguageSwitcher />
       </div>
     </div>
   );
