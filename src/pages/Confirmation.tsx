@@ -1,11 +1,11 @@
-import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
-import { useNavigate } from "react-router-dom";
 import { CheckCircle2 } from "lucide-react";
 import ClinicLogo from "@/components/ClinicLogo";
+import LanguageSwitcher from "@/components/LanguageSwitcher";
+import { useTranslation } from "@/lib/i18n";
 
 const Confirmation = () => {
-  const navigate = useNavigate();
+  const { t } = useTranslation();
 
   return (
     <div className="min-h-screen flex flex-col items-center justify-center p-4">
@@ -21,17 +21,19 @@ const Confirmation = () => {
           {/* Message */}
           <div className="space-y-2">
             <h1 className="text-3xl font-bold text-foreground">
-              Thank You
+              {t('thankYou')}
             </h1>
             <p className="text-muted-foreground">
-              We've received your feedback and our team will review it carefully.
+              {t('receivedFeedback')}
             </p>
             <p className="text-sm text-muted-foreground">
-              We're committed to making improvements and hope to serve you better in the future.
+              {t('committedToImproving')}
             </p>
           </div>
 
         </Card>
+
+        <LanguageSwitcher />
       </div>
     </div>
   );
