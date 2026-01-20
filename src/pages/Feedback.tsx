@@ -5,6 +5,7 @@ import { Textarea } from "@/components/ui/textarea";
 import { Checkbox } from "@/components/ui/checkbox";
 import { Label } from "@/components/ui/label";
 import { useNavigate, useSearchParams } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 import { MessageSquare } from "lucide-react";
 import ClinicLogo from "@/components/ClinicLogo";
 
@@ -14,14 +15,15 @@ const Feedback = () => {
   const [feedback, setFeedback] = useState("");
   const [allowContact, setAllowContact] = useState(false);
   const navigate = useNavigate();
+  const { t } = useTranslation();
 
   const getFeedbackMessage = () => {
     if (score !== null && score <= 6) {
-      return "Thank you for your honesty. We are sorry to hear that your experience did not meet expectations. Please tell us what happened so we can follow up and make things better.";
+      return t('feedback.detractorMessage');
     } else if (score !== null && score <= 8) {
-      return "Thank you for your feedback. We'd love to know what would have made your experience even better.";
+      return t('feedback.passiveMessage');
     } else {
-      return "Thank you for your feedback! We're happy you had a positive experience. Is there anything that stood out that you'd like to share?";
+      return t('feedback.promoterMessage');
     }
   };
 
@@ -42,7 +44,7 @@ const Feedback = () => {
               <MessageSquare className="w-8 h-8 text-muted-foreground" />
             </div>
             <h1 className="text-2xl font-bold text-foreground">
-              We Value Your Feedback
+              {t('common.valueYourFeedback')}
             </h1>
             <p className="text-muted-foreground">
               {getFeedbackMessage()}
@@ -53,11 +55,11 @@ const Feedback = () => {
           <div className="space-y-4">
             <div className="space-y-2">
               <label htmlFor="feedback" className="text-sm font-medium text-foreground">
-                What could we have done better?
+                {t('feedback.inputLabel')}
               </label>
               <Textarea
                 id="feedback"
-                placeholder="Please share your thoughts..."
+                placeholder={t('feedback.placeholder')}
                 value={feedback}
                 onChange={(e) => setFeedback(e.target.value)}
                 className="min-h-[150px] resize-none"
@@ -77,10 +79,10 @@ const Feedback = () => {
                   htmlFor="contact-consent" 
                   className="text-sm font-medium cursor-pointer leading-tight"
                 >
-                  I consent to being contacted by the clinic via email or phone regarding my feedback
+                  {t('feedback.consent')}
                 </Label>
                 <p className="text-xs text-muted-foreground mt-1">
-                  This helps us better understand and address your concerns
+                  {t('feedback.consentHelp')}
                 </p>
               </div>
             </div>
@@ -91,7 +93,7 @@ const Feedback = () => {
               className="w-full bg-primary hover:bg-primary/90 text-primary-foreground shadow-md"
               size="lg"
             >
-              Submit Feedback
+              {t('common.submitFeedback')}
             </Button>
 
             <Button
@@ -99,13 +101,13 @@ const Feedback = () => {
               onClick={() => navigate('/')}
               className="w-full"
             >
-              Skip for now
+              {t('feedback.skip')}
             </Button>
           </div>
 
           {/* Privacy Note */}
           <p className="text-xs text-center text-muted-foreground">
-            Your feedback is private and will be reviewed by our team to improve our service.
+            {t('feedback.privacyNote')}
           </p>
         </Card>
       </div>

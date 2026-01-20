@@ -1,10 +1,12 @@
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { useNavigate } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 import ClinicLogo from "@/components/ClinicLogo";
 
 const Email = () => {
   const navigate = useNavigate();
+  const { t } = useTranslation();
 
   return (
     <div className="min-h-screen flex flex-col items-center justify-center p-4">
@@ -14,25 +16,25 @@ const Email = () => {
         <Card className="shadow-xl overflow-hidden bg-card/95 backdrop-blur">
           {/* Email Header */}
           <div className="bg-primary p-6 text-center">
-            <h2 className="text-xl font-bold text-primary-foreground">We Value Your Feedback</h2>
+            <h2 className="text-xl font-bold text-primary-foreground">{t('common.valueYourFeedback')}</h2>
           </div>
 
           {/* Email Body */}
           <div className="p-6 space-y-6 bg-card">
             <div className="space-y-2">
-              <p className="text-sm text-muted-foreground">Subject: We value your feedback</p>
+              <p className="text-sm text-muted-foreground">{t('email.subject')}</p>
               <hr className="border-border" />
             </div>
 
             <div className="space-y-4">
-              <p className="text-foreground">Hello,</p>
+              <p className="text-foreground">{t('email.greeting')}</p>
               
               <p className="text-foreground leading-relaxed">
-                Thanks for your recent visit. We hope you had a positive experience with us.
+                {t('email.body')}
               </p>
 
               <p className="text-foreground leading-relaxed font-medium">
-                How likely are you to recommend us to a friend or family member?
+                {t('email.question')}
               </p>
 
               {/* NPS Scale */}
@@ -51,13 +53,13 @@ const Email = () => {
                 
                 {/* Labels */}
                 <div className="flex justify-between text-xs text-muted-foreground px-1">
-                  <span>Not likely</span>
-                  <span>Very likely</span>
+                  <span>{t('common.notLikely')}</span>
+                  <span>{t('common.veryLikely')}</span>
                 </div>
               </div>
 
               <p className="text-xs text-muted-foreground text-center">
-                Click a number to rate your experience
+                {t('common.clickToRate')}
               </p>
             </div>
           </div>
@@ -75,10 +77,10 @@ const Email = () => {
             </div>
             <div className="pt-2 border-t border-border space-y-1">
               <p className="text-xs text-muted-foreground">
-                © 2024 Generation Fertility. All rights reserved.
+                {t('email.copyright')}
               </p>
               <button className="text-xs text-muted-foreground underline hover:text-foreground">
-                Unsubscribe
+                {t('email.unsubscribe')}
               </button>
             </div>
           </div>
@@ -91,7 +93,7 @@ const Email = () => {
             onClick={() => navigate('/')}
             className="text-sm text-muted-foreground hover:text-foreground"
           >
-            ← Back to entry options
+            {t('common.backToEntry')}
           </Button>
         </div>
       </div>

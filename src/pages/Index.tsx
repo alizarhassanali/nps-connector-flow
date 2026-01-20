@@ -1,11 +1,12 @@
-import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { Mail, MessageSquare } from "lucide-react";
 import { useNavigate } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 import ClinicLogo from "@/components/ClinicLogo";
 
 const Index = () => {
   const navigate = useNavigate();
+  const { t } = useTranslation();
 
   return (
     <div className="min-h-screen flex flex-col items-center justify-center p-4">
@@ -13,8 +14,8 @@ const Index = () => {
       <div className="w-full max-w-md space-y-8 animate-fade-in">
         {/* Header */}
         <div className="text-center space-y-2">
-          <h1 className="text-3xl font-bold text-foreground">Patient Feedback</h1>
-          <p className="text-muted-foreground">Choose how you received your survey</p>
+          <h1 className="text-3xl font-bold text-foreground">{t('index.title')}</h1>
+          <p className="text-muted-foreground">{t('index.subtitle')}</p>
         </div>
 
         {/* Entry Point Cards */}
@@ -29,8 +30,8 @@ const Index = () => {
                   <MessageSquare className="w-6 h-6 text-accent" />
                 </div>
                 <div className="flex-1 text-left">
-                  <h3 className="font-semibold text-lg">SMS Message</h3>
-                  <p className="text-sm text-muted-foreground">I received a text message</p>
+                  <h3 className="font-semibold text-lg">{t('index.smsTitle')}</h3>
+                  <p className="text-sm text-muted-foreground">{t('index.smsDescription')}</p>
                 </div>
               </div>
             </button>
@@ -44,15 +45,15 @@ const Index = () => {
                   <Mail className="w-6 h-6 text-primary" />
                 </div>
                 <div className="flex-1 text-left">
-                  <h3 className="font-semibold text-lg">Email</h3>
-                  <p className="text-sm text-muted-foreground">I received an email</p>
+                  <h3 className="font-semibold text-lg">{t('index.emailTitle')}</h3>
+                  <p className="text-sm text-muted-foreground">{t('index.emailDescription')}</p>
                 </div>
               </div>
             </button>
           </div>
 
           <p className="text-xs text-center text-muted-foreground">
-            This is a prototype demonstration
+            {t('index.prototypeNote')}
           </p>
         </Card>
       </div>

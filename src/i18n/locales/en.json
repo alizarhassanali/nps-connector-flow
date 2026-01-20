@@ -1,0 +1,79 @@
+{
+  "common": {
+    "valueYourFeedback": "We Value Your Feedback",
+    "notLikely": "Not likely",
+    "veryLikely": "Very likely",
+    "submitFeedback": "Submit Feedback",
+    "backToHome": "← Back to home",
+    "backToEntry": "← Back to entry options",
+    "clickToRate": "Click a number to rate your experience"
+  },
+  "index": {
+    "title": "Patient Feedback",
+    "subtitle": "Choose how you received your survey",
+    "smsTitle": "SMS Message",
+    "smsDescription": "I received a text message",
+    "emailTitle": "Email",
+    "emailDescription": "I received an email",
+    "prototypeNote": "This is a prototype demonstration"
+  },
+  "survey": {
+    "question": "How likely are you to recommend us to a friend or family member?",
+    "lowScoreMessage": "We'd like to hear what went wrong",
+    "highScoreMessage": "Great! Would you share your experience?"
+  },
+  "email": {
+    "subject": "Subject: We value your feedback",
+    "greeting": "Hello,",
+    "body": "Thanks for your recent visit. We hope you had a positive experience with us.",
+    "question": "How likely are you to recommend us to a friend or family member?",
+    "copyright": "© 2024 Generation Fertility. All rights reserved.",
+    "unsubscribe": "Unsubscribe"
+  },
+  "sms": {
+    "greeting": "Thanks for visiting us today. We'd love your feedback.",
+    "tapLink": "Please tap the link below to rate your experience:",
+    "takeSurvey": "Take Survey",
+    "stop": "Reply STOP to unsubscribe"
+  },
+  "feedback": {
+    "detractorMessage": "We're sorry to hear about your experience. Your feedback is important to us.",
+    "passiveMessage": "Thank you for your feedback. We're always looking to improve.",
+    "promoterMessage": "We're glad you had a positive experience!",
+    "inputLabel": "Share your thoughts (optional)",
+    "placeholder": "Tell us more about your experience...",
+    "consent": "I consent to being contacted about my feedback",
+    "consentHelp": "We may reach out to learn more about your experience",
+    "privacyNote": "Your feedback is confidential and will only be used to improve our services.",
+    "skip": "Skip"
+  },
+  "thankYou": {
+    "title": "Thank You!",
+    "promoterMessage": "We're thrilled you had a great experience with us.",
+    "shareQuestion": "Would you like to share your experience publicly?",
+    "googleReview": "Leave a Google Review",
+    "noThanks": "No thanks",
+    "passiveMessage": "We appreciate you taking the time to share your feedback.",
+    "improvementNote": "Your response helps us continue to improve our service."
+  },
+  "confirmation": {
+    "title": "Thank You!",
+    "message": "Your feedback has been received.",
+    "commitment": "We're committed to improving your experience."
+  },
+  "googleReview": {
+    "title": "Share Your Experience",
+    "description": "Your review helps others find quality healthcare. It only takes a moment to share your thoughts on Google.",
+    "button": "Open Google Review",
+    "opensNewWindow": "Opens in a new window"
+  },
+  "notFound": {
+    "title": "404",
+    "message": "Oops! Page not found",
+    "backHome": "Return to Home"
+  },
+  "language": {
+    "en": "English",
+    "fr": "Français"
+  }
+}

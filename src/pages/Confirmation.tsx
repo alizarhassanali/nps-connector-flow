@@ -1,11 +1,10 @@
-import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
-import { useNavigate } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 import { CheckCircle2 } from "lucide-react";
 import ClinicLogo from "@/components/ClinicLogo";
 
 const Confirmation = () => {
-  const navigate = useNavigate();
+  const { t } = useTranslation();
 
   return (
     <div className="min-h-screen flex flex-col items-center justify-center p-4">
@@ -21,13 +20,13 @@ const Confirmation = () => {
           {/* Message */}
           <div className="space-y-2">
             <h1 className="text-3xl font-bold text-foreground">
-              Thank You
+              {t('confirmation.title')}
             </h1>
             <p className="text-muted-foreground">
-              We've received your feedback and our team will review it carefully.
+              {t('confirmation.message')}
             </p>
             <p className="text-sm text-muted-foreground">
-              We're committed to making improvements and hope to serve you better in the future.
+              {t('confirmation.commitment')}
             </p>
           </div>
 
