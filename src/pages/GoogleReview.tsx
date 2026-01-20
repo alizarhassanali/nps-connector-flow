@@ -2,11 +2,8 @@ import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { ExternalLink } from "lucide-react";
 import ClinicLogo from "@/components/ClinicLogo";
-import LanguageSwitcher from "@/components/LanguageSwitcher";
-import { useTranslation } from "@/lib/i18n";
 
 const GoogleReview = () => {
-  const { t } = useTranslation();
   const googleReviewUrl = "https://www.google.com/search?sca_esv=59038b22a1d9f5de&rlz=1C1KNTJ_enPK1089PK1089&sxsrf=AE3TifPHfKcSA6jBCGey73Gxat9RrS3f5Q:1764236487446&si=AMgyJEvkVjFQtirYNBhM3ZJIRTaSJ6PxY6y1_6WZHGInbzDnMUAFYh1IO2BB2WgbISr5OcXUOXh53JkLdMwNp-QNPBJ0Dzfsf55arE5bUbrkLziX-CrSKqJSYL4HTgJC2zDlSj5MAHuNtMb7bm6i2dZaNI2o_EmJRA%3D%3D&q=Generation+Fertility+Vaughan+Reviews&sa=X&ved=2ahUKEwjn8oiJhZKRAxUraqQEHd97JoUQ0bkNegQIIhAE&biw=1920&bih=945&dpr=1#lrd=0x882b2bd869b98351:0xd6626ba53e5afe6f,3,,,,";
 
   return (
@@ -23,10 +20,10 @@ const GoogleReview = () => {
           {/* Message */}
           <div className="space-y-2">
             <h1 className="text-2xl font-bold text-foreground">
-              {t('shareYourExperience')}
+              Share Your Experience
             </h1>
             <p className="text-muted-foreground">
-              {t('reviewHelpsOthers')}
+              Your review helps others find quality healthcare. It only takes a moment to share your thoughts on Google.
             </p>
           </div>
 
@@ -43,18 +40,16 @@ const GoogleReview = () => {
                 rel="noopener noreferrer"
                 className="flex items-center justify-center gap-2"
               >
-                {t('openGoogleReview')}
+                Open Google Review
                 <ExternalLink className="w-4 h-4" />
               </a>
             </Button>
             
             <p className="text-xs text-muted-foreground">
-              {t('opensInNewWindow')}
+              Opens in a new window
             </p>
           </div>
         </Card>
-
-        <LanguageSwitcher />
       </div>
     </div>
   );

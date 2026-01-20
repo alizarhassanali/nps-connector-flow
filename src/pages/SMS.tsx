@@ -1,12 +1,9 @@
 import { Button } from "@/components/ui/button";
 import { useNavigate } from "react-router-dom";
 import ClinicLogo from "@/components/ClinicLogo";
-import LanguageSwitcher from "@/components/LanguageSwitcher";
-import { useTranslation } from "@/lib/i18n";
 
 const SMS = () => {
   const navigate = useNavigate();
-  const { t } = useTranslation();
 
   return (
     <div className="min-h-screen flex flex-col items-center justify-center p-4">
@@ -21,10 +18,10 @@ const SMS = () => {
             <div className="flex-1 space-y-3">
               <div className="bg-muted rounded-2xl rounded-tl-sm p-4 border border-border">
                 <p className="text-sm leading-relaxed text-foreground">
-                  {t('thanksForVisiting')}
+                  Thanks for visiting us today. We'd love your feedback.
                 </p>
                 <p className="text-sm leading-relaxed text-foreground mt-2">
-                  {t('tapLinkBelow')}
+                  Please tap the link below to rate your experience:
                 </p>
               </div>
               
@@ -32,11 +29,11 @@ const SMS = () => {
                 onClick={() => navigate('/survey')}
                 className="w-full bg-accent hover:bg-accent/90 text-accent-foreground shadow-md"
               >
-                {t('takeSurvey')}
+                Take Survey
               </Button>
 
               <p className="text-xs text-muted-foreground text-center">
-                {t('replyStopUnsubscribe')}
+                Reply STOP to unsubscribe
               </p>
             </div>
           </div>
@@ -49,11 +46,9 @@ const SMS = () => {
             onClick={() => navigate('/')}
             className="text-sm text-muted-foreground hover:text-foreground"
           >
-            {t('backToEntryOptions')}
+            ← Back to entry options
           </Button>
         </div>
-
-        <LanguageSwitcher />
       </div>
     </div>
   );

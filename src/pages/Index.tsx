@@ -1,13 +1,11 @@
+import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { Mail, MessageSquare } from "lucide-react";
 import { useNavigate } from "react-router-dom";
 import ClinicLogo from "@/components/ClinicLogo";
-import LanguageSwitcher from "@/components/LanguageSwitcher";
-import { useTranslation } from "@/lib/i18n";
 
 const Index = () => {
   const navigate = useNavigate();
-  const { t } = useTranslation();
 
   return (
     <div className="min-h-screen flex flex-col items-center justify-center p-4">
@@ -15,8 +13,8 @@ const Index = () => {
       <div className="w-full max-w-md space-y-8 animate-fade-in">
         {/* Header */}
         <div className="text-center space-y-2">
-          <h1 className="text-3xl font-bold text-foreground">{t('patientFeedback')}</h1>
-          <p className="text-muted-foreground">{t('chooseHowReceived')}</p>
+          <h1 className="text-3xl font-bold text-foreground">Patient Feedback</h1>
+          <p className="text-muted-foreground">Choose how you received your survey</p>
         </div>
 
         {/* Entry Point Cards */}
@@ -31,8 +29,8 @@ const Index = () => {
                   <MessageSquare className="w-6 h-6 text-accent" />
                 </div>
                 <div className="flex-1 text-left">
-                  <h3 className="font-semibold text-lg">{t('smsMessage')}</h3>
-                  <p className="text-sm text-muted-foreground">{t('receivedTextMessage')}</p>
+                  <h3 className="font-semibold text-lg">SMS Message</h3>
+                  <p className="text-sm text-muted-foreground">I received a text message</p>
                 </div>
               </div>
             </button>
@@ -46,19 +44,17 @@ const Index = () => {
                   <Mail className="w-6 h-6 text-primary" />
                 </div>
                 <div className="flex-1 text-left">
-                  <h3 className="font-semibold text-lg">{t('email')}</h3>
-                  <p className="text-sm text-muted-foreground">{t('receivedEmail')}</p>
+                  <h3 className="font-semibold text-lg">Email</h3>
+                  <p className="text-sm text-muted-foreground">I received an email</p>
                 </div>
               </div>
             </button>
           </div>
 
           <p className="text-xs text-center text-muted-foreground">
-            {t('prototypeDemo')}
+            This is a prototype demonstration
           </p>
         </Card>
-
-        <LanguageSwitcher />
       </div>
     </div>
   );

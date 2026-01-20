@@ -3,7 +3,6 @@ import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import { LanguageProvider } from "@/lib/i18n";
 import Index from "./pages/Index";
 import SMS from "./pages/SMS";
 import Email from "./pages/Email";
@@ -19,27 +18,25 @@ const queryClient = new QueryClient();
 
 const App = () => (
   <QueryClientProvider client={queryClient}>
-    <LanguageProvider>
-      <TooltipProvider>
-        <Toaster />
-        <Sonner />
-        <BrowserRouter>
-          <Routes>
-            <Route path="/" element={<Index />} />
-            <Route path="/sms" element={<SMS />} />
-            <Route path="/email" element={<Email />} />
-            <Route path="/survey" element={<Survey />} />
-            <Route path="/thank-you" element={<ThankYou />} />
-            <Route path="/thank-you-passive" element={<ThankYouPassive />} />
-            <Route path="/google-review" element={<GoogleReview />} />
-            <Route path="/feedback" element={<Feedback />} />
-            <Route path="/confirmation" element={<Confirmation />} />
-            {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
-            <Route path="*" element={<NotFound />} />
-          </Routes>
-        </BrowserRouter>
-      </TooltipProvider>
-    </LanguageProvider>
+    <TooltipProvider>
+      <Toaster />
+      <Sonner />
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<Index />} />
+          <Route path="/sms" element={<SMS />} />
+          <Route path="/email" element={<Email />} />
+          <Route path="/survey" element={<Survey />} />
+          <Route path="/thank-you" element={<ThankYou />} />
+          <Route path="/thank-you-passive" element={<ThankYouPassive />} />
+          <Route path="/google-review" element={<GoogleReview />} />
+          <Route path="/feedback" element={<Feedback />} />
+          <Route path="/confirmation" element={<Confirmation />} />
+          {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
+          <Route path="*" element={<NotFound />} />
+        </Routes>
+      </BrowserRouter>
+    </TooltipProvider>
   </QueryClientProvider>
 );
 
