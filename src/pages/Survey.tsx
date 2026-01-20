@@ -2,6 +2,7 @@ import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { useNavigate, useSearchParams } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 import { Frown, Meh, Smile } from "lucide-react";
 import ClinicLogo from "@/components/ClinicLogo";
 
@@ -12,6 +13,7 @@ const Survey = () => {
     preSelectedScore ? parseInt(preSelectedScore) : null
   );
   const navigate = useNavigate();
+  const { t } = useTranslation();
 
   const handleSubmit = () => {
     if (selectedScore === null) return;
@@ -40,10 +42,10 @@ const Survey = () => {
           {/* Header */}
           <div className="text-center mb-8 space-y-2">
             <h1 className="text-2xl md:text-3xl font-bold text-foreground">
-              We Value Your Feedback
+              {t('common.valueYourFeedback')}
             </h1>
             <p className="text-muted-foreground">
-              How likely are you to recommend us to a friend or family member?
+              {t('survey.question')}
             </p>
           </div>
 
@@ -70,8 +72,8 @@ const Survey = () => {
 
             {/* Labels */}
             <div className="flex justify-between text-xs text-muted-foreground px-1">
-              <span>Not likely</span>
-              <span>Very likely</span>
+              <span>{t('common.notLikely')}</span>
+              <span>{t('common.veryLikely')}</span>
             </div>
 
             {/* Emoji Feedback */}
@@ -81,8 +83,8 @@ const Survey = () => {
                   {getEmoji(selectedScore)}
                 </div>
                 <p className="text-sm text-muted-foreground">
-                  {selectedScore <= 8 && "We'd like to hear what went wrong"}
-                  {selectedScore >= 9 && "Great! Would you share your experience?"}
+                  {selectedScore <= 8 && t('survey.lowScoreMessage')}
+                  {selectedScore >= 9 && t('survey.highScoreMessage')}
                 </p>
               </div>
             )}
@@ -95,7 +97,7 @@ const Survey = () => {
             className="w-full bg-primary hover:bg-primary/90 text-primary-foreground shadow-md"
             size="lg"
           >
-            Submit Feedback
+            {t('common.submitFeedback')}
           </Button>
         </Card>
 
@@ -106,7 +108,7 @@ const Survey = () => {
             onClick={() => navigate('/')}
             className="text-sm text-muted-foreground hover:text-foreground"
           >
-            ← Back to home
+            {t('common.backToHome')}
           </Button>
         </div>
       </div>

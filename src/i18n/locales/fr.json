@@ -1,0 +1,78 @@
+{
+  "common": {
+    "valueYourFeedback": "Votre avis nous intéresse",
+    "notLikely": "Peu probable",
+    "veryLikely": "Très probable",
+    "submitFeedback": "Soumettre",
+    "backToHome": "← Retour à l'accueil",
+    "backToEntry": "← Retour aux options"
+  },
+  "index": {
+    "title": "Commentaires des patients",
+    "subtitle": "Comment avez-vous reçu votre sondage?",
+    "smsTitle": "Message texte",
+    "smsDescription": "J'ai reçu un message texte",
+    "emailTitle": "Courriel",
+    "emailDescription": "J'ai reçu un courriel",
+    "prototypeNote": "Ceci est une démonstration de prototype"
+  },
+  "survey": {
+    "question": "Quelle est la probabilité que vous nous recommandiez à un ami ou un membre de votre famille?",
+    "lowScoreMessage": "Nous aimerions savoir ce qui s'est passé",
+    "highScoreMessage": "Super! Voulez-vous partager votre expérience?"
+  },
+  "email": {
+    "subject": "Objet: Votre avis nous intéresse",
+    "greeting": "Bonjour,",
+    "body": "Merci pour votre récente visite. Nous espérons que vous avez eu une expérience positive avec nous.",
+    "question": "Quelle est la probabilité que vous nous recommandiez à un ami ou un membre de votre famille?",
+    "copyright": "© 2024 Generation Fertility. Tous droits réservés.",
+    "unsubscribe": "Se désabonner"
+  },
+  "sms": {
+    "greeting": "Merci pour votre visite aujourd'hui. Nous aimerions avoir vos commentaires.",
+    "tapLink": "Veuillez appuyer sur le lien ci-dessous pour évaluer votre expérience:",
+    "takeSurvey": "Répondre au sondage",
+    "stop": "Répondez STOP pour vous désabonner"
+  },
+  "feedback": {
+    "detractorMessage": "Nous sommes désolés d'apprendre votre expérience. Vos commentaires sont importants pour nous.",
+    "passiveMessage": "Merci pour vos commentaires. Nous cherchons toujours à nous améliorer.",
+    "promoterMessage": "Nous sommes ravis que vous ayez eu une expérience positive!",
+    "inputLabel": "Partagez vos pensées (facultatif)",
+    "placeholder": "Dites-nous en plus sur votre expérience...",
+    "consent": "J'accepte d'être contacté au sujet de mes commentaires",
+    "consentHelp": "Nous pourrions vous contacter pour en savoir plus sur votre expérience",
+    "privacyNote": "Vos commentaires sont confidentiels et ne seront utilisés que pour améliorer nos services.",
+    "skip": "Passer"
+  },
+  "thankYou": {
+    "title": "Merci!",
+    "promoterMessage": "Nous sommes ravis que vous ayez eu une excellente expérience avec nous.",
+    "shareQuestion": "Souhaitez-vous partager publiquement votre expérience?",
+    "googleReview": "Laisser un avis Google",
+    "noThanks": "Non merci",
+    "passiveMessage": "Nous vous remercions d'avoir pris le temps de partager vos commentaires.",
+    "improvementNote": "Votre réponse nous aide à continuer à améliorer notre service."
+  },
+  "confirmation": {
+    "title": "Merci!",
+    "message": "Vos commentaires ont été reçus.",
+    "commitment": "Nous nous engageons à améliorer votre expérience."
+  },
+  "googleReview": {
+    "title": "Partagez votre expérience",
+    "description": "Votre avis aide les autres à trouver des soins de qualité. Il ne faut qu'un instant pour partager vos pensées sur Google.",
+    "button": "Ouvrir l'avis Google",
+    "opensNewWindow": "S'ouvre dans une nouvelle fenêtre"
+  },
+  "notFound": {
+    "title": "404",
+    "message": "Oups! Page non trouvée",
+    "backHome": "Retour à l'accueil"
+  },
+  "language": {
+    "en": "English",
+    "fr": "Français"
+  }
+}
