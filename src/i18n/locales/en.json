@@ -72,6 +72,10 @@
     "message": "Oops! Page not found",
     "backHome": "Return to Home"
   },
+  "noAccess": {
+    "title": "Valid Survey Link Required",
+    "message": "To access the survey, please use the link provided in your SMS or email invitation."
+  },
   "language": {
     "en": "English",
     "fr": "Français"

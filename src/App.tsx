@@ -13,6 +13,7 @@ import GoogleReview from "./pages/GoogleReview";
 import Feedback from "./pages/Feedback";
 import Confirmation from "./pages/Confirmation";
 import NotFound from "./pages/NotFound";
+import NoSurveyAccess from "./pages/NoSurveyAccess";
 
 const queryClient = new QueryClient();
 
@@ -32,6 +33,7 @@ const App = () => (
           <Route path="/google-review" element={<GoogleReview />} />
           <Route path="/feedback" element={<Feedback />} />
           <Route path="/confirmation" element={<Confirmation />} />
+          <Route path="/no-access" element={<NoSurveyAccess />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>
