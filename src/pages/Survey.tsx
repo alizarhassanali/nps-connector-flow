@@ -1,19 +1,24 @@
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
-import { useNavigate, useSearchParams } from "react-router-dom";
+import { useNavigate, useSearchParams, Navigate } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 import { Frown, Meh, Smile } from "lucide-react";
 import ClinicLogo from "@/components/ClinicLogo";
 
 const Survey = () => {
   const [searchParams] = useSearchParams();
+  const token = searchParams.get('token');
   const preSelectedScore = searchParams.get('score');
   const [selectedScore, setSelectedScore] = useState<number | null>(
     preSelectedScore ? parseInt(preSelectedScore) : null
   );
   const navigate = useNavigate();
   const { t } = useTranslation();
+
+  if (!token) {
+    return <Navigate to="/no-access" replace />;
+  }
 
   const handleSubmit = () => {
     if (selectedScore === null) return;

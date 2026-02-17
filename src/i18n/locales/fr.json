@@ -71,6 +71,10 @@
     "message": "Oups! Page non trouvée",
     "backHome": "Retour à l'accueil"
   },
+  "noAccess": {
+    "title": "Lien de sondage valide requis",
+    "message": "Pour accéder au sondage, veuillez utiliser le lien fourni dans votre SMS ou courriel d'invitation."
+  },
   "language": {
     "en": "English",
     "fr": "Français"
