@@ -1,45 +1,25 @@
 
 
-## "No Survey Assigned" Page
+## Center Logo with Language Selector Below
 
-### What Will Change
-When a user visits the survey URL (or any page) without a valid token, they will see a friendly page explaining they need a valid survey link to proceed, instead of landing on the current Index page or seeing broken content.
+### Changes
 
-### New Page: `NoSurveyAccess`
-- Shows the clinic logo at the top (consistent with all other pages)
-- Displays a "lock" or "link broken" icon
-- Heading: "Valid Survey Link Required"
-- Message: "To access the survey, please use the link provided in your SMS or email invitation."
-- No navigation buttons (since there is no home or survey for them)
-- Fully translated in English and French
+**File: `src/components/ClinicLogo.tsx`**
+- Change layout from horizontal (logo left, language selector right) to vertical centered layout
+- Center the clinic logo
+- Place the language selector below the logo, also centered
 
-### Routing Logic
-- The `/survey` route will check for a `token` query parameter (e.g., `/survey?token=abc123`)
-- If no token is present, the Survey page redirects to `/no-access`
-- A new `/no-access` route renders the `NoSurveyAccess` page
+### Layout
+
+```text
+      [ Clinic Logo ]
+    [ Language Selector ]
+```
 
 ### Technical Details
 
-**Files to create:**
-| File | Purpose |
-|------|---------|
-| `src/pages/NoSurveyAccess.tsx` | New page with clinic logo, icon, heading, and message |
-
-**Files to modify:**
-| File | Change |
-|------|--------|
-| `src/App.tsx` | Add `/no-access` route |
-| `src/pages/Survey.tsx` | Add token check; redirect to `/no-access` if missing |
-| `src/i18n/locales/en.json` | Add `noAccess.title` and `noAccess.message` translation keys |
-| `src/i18n/locales/fr.json` | Add French translations for the same keys |
-
-**Translation strings:**
-
-English:
-- `noAccess.title`: "Valid Survey Link Required"
-- `noAccess.message`: "To access the survey, please use the link provided in your SMS or email invitation."
-
-French:
-- `noAccess.title`: "Lien de sondage valide requis"
-- `noAccess.message`: "Pour acceder au sondage, veuillez utiliser le lien fourni dans votre SMS ou courriel d'invitation."
+Update `ClinicLogo.tsx`:
+- Change the flex container from `flex justify-between items-center` to `flex flex-col items-center`
+- Add spacing between logo and language selector (e.g., `gap-3`)
+- Keep the existing max-width and margin-bottom
 
