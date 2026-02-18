@@ -2,6 +2,7 @@ import { useTranslation } from "react-i18next";
 import { ShieldX } from "lucide-react";
 import { Card } from "@/components/ui/card";
 import ClinicLogo from "@/components/ClinicLogo";
+import LanguageSelector from "@/components/LanguageSelector";
 
 const NoSurveyAccess = () => {
   const { t } = useTranslation();
@@ -21,6 +22,9 @@ const NoSurveyAccess = () => {
             {t('noAccess.message')}
           </p>
         </Card>
+      </div>
+      <div className="mt-8">
+        <LanguageSelector />
       </div>
     </div>
   );
