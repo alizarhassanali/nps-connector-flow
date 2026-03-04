@@ -1,40 +1,25 @@
 
 
-## Improve Survey Question Components UX
+## Center Logo with Language Selector Below
 
 ### Changes
 
-**1. `src/components/survey/CheckboxGroup.tsx` — Better checkbox experience**
-- Make checkboxes larger (h-5 w-5) by passing className override
-- Add tappable row styling: each option gets a full-width clickable row with padding, rounded border, and highlight on selection
-- This makes the square checkbox more visible and the tap target much larger
+**File: `src/components/ClinicLogo.tsx`**
+- Change layout from horizontal (logo left, language selector right) to vertical centered layout
+- Center the clinic logo
+- Place the language selector below the logo, also centered
 
-**2. `src/components/survey/RadioGroup.tsx` — Matching radio experience**
-- Same tappable row treatment as checkboxes: full-width rows with border, padding, and selection highlight
-
-**3. `src/components/survey/ScaleInput.tsx` — Refined scale**
-- Make buttons smaller and more compact with `h-10 w-10` fixed size (circle/rounded-full style) instead of `flex-1` wide blocks
-- Center the row of number circles
-- Cleaner, more minimal look
-
-**4. `src/components/ui/checkbox.tsx` — Ensure square appearance**
-- Increase default size from `h-4 w-4` to `h-5 w-5` for better visibility
-- Keep `rounded-sm` (already square)
-
-### Visual Result
+### Layout
 
 ```text
-Checkboxes:
-┌─────────────────────────────┐
-│ ☑ Wait time                 │  ← highlighted row
-├─────────────────────────────┤
-│ ☐ Staff friendliness        │
-├─────────────────────────────┤
-│ ☐ Communication             │
-└─────────────────────────────┘
-
-Scale:
-    ① ② ③ ④ ⑤
-   Poor      Excellent
+      [ Clinic Logo ]
+    [ Language Selector ]
 ```
+
+### Technical Details
+
+Update `ClinicLogo.tsx`:
+- Change the flex container from `flex justify-between items-center` to `flex flex-col items-center`
+- Add spacing between logo and language selector (e.g., `gap-3`)
+- Keep the existing max-width and margin-bottom
 
