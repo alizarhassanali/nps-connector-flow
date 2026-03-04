@@ -1,34 +1,66 @@
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
-import { Textarea } from "@/components/ui/textarea";
 import { Checkbox } from "@/components/ui/checkbox";
 import { Label } from "@/components/ui/label";
 import { useNavigate, useSearchParams } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 import { MessageSquare } from "lucide-react";
 import ClinicLogo from "@/components/ClinicLogo";
+import SurveyQuestionRenderer from "@/components/survey/SurveyQuestionRenderer";
+import type { SurveyQuestion, QuestionAnswer } from "@/components/survey/types";
+
+// Configure your follow-up questions here
+const followUpQuestions: SurveyQuestion[] = [
+  {
+    id: 'experience-areas',
+    type: 'checkbox',
+    label: 'Which areas of your experience could be improved?',
+    options: ['Wait time', 'Staff friendliness', 'Communication', 'Cleanliness', 'Billing'],
+  },
+  {
+    id: 'visit-purpose',
+    type: 'radio',
+    label: 'What was the primary purpose of your visit?',
+    options: ['Consultation', 'Follow-up', 'Treatment', 'Other'],
+  },
+  {
+    id: 'overall-care',
+    type: 'scale',
+    label: 'How would you rate the quality of care?',
+    min: 1,
+    max: 5,
+    minLabel: 'Poor',
+    maxLabel: 'Excellent',
+  },
+  {
+    id: 'additional-comments',
+    type: 'open-text',
+    label: 'Any additional comments?',
+    placeholder: 'Tell us more about your experience...',
+  },
+];
 
 const Feedback = () => {
   const [searchParams] = useSearchParams();
   const score = searchParams.get('score') ? parseInt(searchParams.get('score')!) : null;
-  const [feedback, setFeedback] = useState("");
+  const [answers, setAnswers] = useState<Record<string, QuestionAnswer>>({});
   const [allowContact, setAllowContact] = useState(false);
   const navigate = useNavigate();
   const { t } = useTranslation();
 
   const getFeedbackMessage = () => {
-    if (score !== null && score <= 6) {
-      return t('feedback.detractorMessage');
-    } else if (score !== null && score <= 8) {
-      return t('feedback.passiveMessage');
-    } else {
-      return t('feedback.promoterMessage');
-    }
+    if (score !== null && score <= 6) return t('feedback.detractorMessage');
+    if (score !== null && score <= 8) return t('feedback.passiveMessage');
+    return t('feedback.promoterMessage');
+  };
+
+  const updateAnswer = (questionId: string, value: QuestionAnswer) => {
+    setAnswers((prev) => ({ ...prev, [questionId]: value }));
   };
 
   const handleSubmit = () => {
-    // In a real app, this would submit to a backend
+    // In a real app, submit answers to backend
     navigate('/confirmation');
   };
 
@@ -51,59 +83,54 @@ const Feedback = () => {
             </p>
           </div>
 
-          {/* Feedback Form */}
-          <div className="space-y-4">
-            <div className="space-y-2">
-              <label htmlFor="feedback" className="text-sm font-medium text-foreground">
-                {t('feedback.inputLabel')}
-              </label>
-              <Textarea
-                id="feedback"
-                placeholder={t('feedback.placeholder')}
-                value={feedback}
-                onChange={(e) => setFeedback(e.target.value)}
-                className="min-h-[150px] resize-none"
+          {/* Dynamic Questions */}
+          <div className="space-y-6">
+            {followUpQuestions.map((question) => (
+              <SurveyQuestionRenderer
+                key={question.id}
+                question={question}
+                value={answers[question.id] ?? null}
+                onChange={(value) => updateAnswer(question.id, value)}
               />
-            </div>
-
-            {/* Contact Consent */}
-            <div className="flex items-start space-x-3 p-4 bg-muted rounded-lg border border-border">
-              <Checkbox 
-                id="contact-consent" 
-                checked={allowContact}
-                onCheckedChange={(checked) => setAllowContact(checked as boolean)}
-                className="mt-1"
-              />
-              <div className="flex-1">
-                <Label 
-                  htmlFor="contact-consent" 
-                  className="text-sm font-medium cursor-pointer leading-tight"
-                >
-                  {t('feedback.consent')}
-                </Label>
-                <p className="text-xs text-muted-foreground mt-1">
-                  {t('feedback.consentHelp')}
-                </p>
-              </div>
-            </div>
-
-            <Button
-              onClick={handleSubmit}
-              disabled={!feedback.trim()}
-              className="w-full bg-primary hover:bg-primary/90 text-primary-foreground shadow-md"
-              size="lg"
-            >
-              {t('common.submitFeedback')}
-            </Button>
-
-            <Button
-              variant="ghost"
-              onClick={() => navigate('/')}
-              className="w-full"
-            >
-              {t('feedback.skip')}
-            </Button>
+            ))}
           </div>
+
+          {/* Contact Consent */}
+          <div className="flex items-start space-x-3 p-4 bg-muted rounded-lg border border-border">
+            <Checkbox 
+              id="contact-consent" 
+              checked={allowContact}
+              onCheckedChange={(checked) => setAllowContact(checked as boolean)}
+              className="mt-1"
+            />
+            <div className="flex-1">
+              <Label 
+                htmlFor="contact-consent" 
+                className="text-sm font-medium cursor-pointer leading-tight"
+              >
+                {t('feedback.consent')}
+              </Label>
+              <p className="text-xs text-muted-foreground mt-1">
+                {t('feedback.consentHelp')}
+              </p>
+            </div>
+          </div>
+
+          <Button
+            onClick={handleSubmit}
+            className="w-full bg-primary hover:bg-primary/90 text-primary-foreground shadow-md"
+            size="lg"
+          >
+            {t('common.submitFeedback')}
+          </Button>
+
+          <Button
+            variant="ghost"
+            onClick={() => navigate('/')}
+            className="w-full"
+          >
+            {t('feedback.skip')}
+          </Button>
 
           {/* Privacy Note */}
           <p className="text-xs text-center text-muted-foreground">
