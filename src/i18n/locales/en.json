@@ -1,6 +1,6 @@
 {
   "common": {
-    "valueYourFeedback": "We Value Your Feedback",
+    "valueYourFeedback": "Your feedback matters to us",
     "notLikely": "Not likely",
     "veryLikely": "Very likely",
     "submitFeedback": "Submit Feedback",
@@ -23,18 +23,21 @@
     "highScoreMessage": "Great! Would you share your experience?"
   },
   "email": {
-    "subject": "Subject: We value your feedback",
-    "greeting": "Hello,",
-    "body": "Thanks for your recent visit. We hope you had a positive experience with us.",
+    "subject": "Subject: Your feedback matters to us",
+    "greeting": "Hi [Name],",
+    "body": "Thank you for visiting [Clinic Name].",
+    "perspective": "Your perspective matters to us. If you have a minute, we'd appreciate you sharing feedback on your recent visit:",
     "question": "How likely are you to recommend us to a friend or family member?",
     "copyright": "© 2024 Generation Fertility. All rights reserved.",
-    "unsubscribe": "Unsubscribe"
+    "unsubscribe": "You can unsubscribe from future feedback requests at any time using the link below.",
+    "unsubscribeLink": "Unsubscribe"
   },
   "sms": {
-    "greeting": "Thanks for visiting us today. We'd love your feedback.",
-    "tapLink": "Please tap the link below to rate your experience:",
+    "greeting": "Hi [Name],",
+    "body": "Thank you for your recent visit to [Clinic Name].",
+    "tapLink": "If you have a moment, we'd appreciate hearing your thoughts:",
     "takeSurvey": "Take Survey",
-    "stop": "Reply STOP to unsubscribe"
+    "stop": "Reply STOP to unsubscribe."
   },
   "feedback": {
     "detractorMessage": "We're sorry to hear about your experience. Your feedback is important to us.",
