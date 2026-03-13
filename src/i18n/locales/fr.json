@@ -1,11 +1,12 @@
 {
   "common": {
-    "valueYourFeedback": "Votre avis nous intéresse",
+    "valueYourFeedback": "Votre avis compte pour nous",
     "notLikely": "Peu probable",
     "veryLikely": "Très probable",
     "submitFeedback": "Soumettre",
     "backToHome": "← Retour à l'accueil",
-    "backToEntry": "← Retour aux options"
+    "backToEntry": "← Retour aux options",
+    "clickToRate": "Cliquez sur un chiffre pour évaluer votre expérience"
   },
   "index": {
     "title": "Commentaires des patients",
@@ -22,18 +23,21 @@
     "highScoreMessage": "Super! Voulez-vous partager votre expérience?"
   },
   "email": {
-    "subject": "Objet: Votre avis nous intéresse",
-    "greeting": "Bonjour,",
-    "body": "Merci pour votre récente visite. Nous espérons que vous avez eu une expérience positive avec nous.",
+    "subject": "Objet: Votre avis compte pour nous",
+    "greeting": "Bonjour [Nom],",
+    "body": "Merci d'avoir visité [Nom de la clinique].",
+    "perspective": "Votre point de vue compte pour nous. Si vous avez une minute, nous apprécierions que vous partagiez vos commentaires sur votre récente visite :",
     "question": "Quelle est la probabilité que vous nous recommandiez à un ami ou un membre de votre famille?",
     "copyright": "© 2024 Generation Fertility. Tous droits réservés.",
-    "unsubscribe": "Se désabonner"
+    "unsubscribe": "Vous pouvez vous désabonner des futures demandes de commentaires à tout moment en utilisant le lien ci-dessous.",
+    "unsubscribeLink": "Se désabonner"
   },
   "sms": {
-    "greeting": "Merci pour votre visite aujourd'hui. Nous aimerions avoir vos commentaires.",
-    "tapLink": "Veuillez appuyer sur le lien ci-dessous pour évaluer votre expérience:",
+    "greeting": "Bonjour [Nom],",
+    "body": "Merci pour votre récente visite à [Nom de la clinique].",
+    "tapLink": "Si vous avez un moment, nous aimerions connaître vos impressions :",
     "takeSurvey": "Répondre au sondage",
-    "stop": "Répondez STOP pour vous désabonner"
+    "stop": "Répondez STOP pour vous désabonner."
   },
   "feedback": {
     "detractorMessage": "Nous sommes désolés d'apprendre votre expérience. Vos commentaires sont importants pour nous.",

@@ -23,6 +23,9 @@ const SMS = () => {
                   {t('sms.greeting')}
                 </p>
                 <p className="text-sm leading-relaxed text-foreground mt-2">
+                  {t('sms.body')}
+                </p>
+                <p className="text-sm leading-relaxed text-foreground mt-2">
                   {t('sms.tapLink')}
                 </p>
               </div>

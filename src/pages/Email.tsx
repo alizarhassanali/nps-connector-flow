@@ -20,7 +20,7 @@ const Email = () => {
           </div>
 
           {/* Email Body */}
-          <div className="p-6 space-y-6 bg-card">
+          <div className="p-6 space-y-4 bg-card">
             <div className="space-y-2">
               <p className="text-sm text-muted-foreground">{t('email.subject')}</p>
               <hr className="border-border" />
@@ -31,6 +31,10 @@ const Email = () => {
               
               <p className="text-foreground leading-relaxed">
                 {t('email.body')}
+              </p>
+
+              <p className="text-foreground leading-relaxed">
+                {t('email.perspective')}
               </p>
 
               <p className="text-foreground leading-relaxed font-medium">
@@ -66,6 +70,9 @@ const Email = () => {
 
           {/* Email Footer */}
           <div className="bg-muted p-6 text-center space-y-3">
+            <p className="text-xs text-muted-foreground leading-relaxed">
+              {t('email.unsubscribe')}
+            </p>
             <div className="space-y-1">
               <p className="text-sm font-medium text-foreground">Generation Fertility</p>
               <p className="text-xs text-muted-foreground">
@@ -80,7 +87,7 @@ const Email = () => {
                 {t('email.copyright')}
               </p>
               <button className="text-xs text-muted-foreground underline hover:text-foreground">
-                {t('email.unsubscribe')}
+                {t('email.unsubscribeLink')}
               </button>
             </div>
           </div>
